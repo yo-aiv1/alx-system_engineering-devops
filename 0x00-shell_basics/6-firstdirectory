@@ -1,2 +1,5 @@
 #!/bin/bash
-mkdir /tmp/my_first_directory
+current_dir=$(pwd)
+cd /tmp/
+mkdir my_first_directory
+cd "$current_dir"
