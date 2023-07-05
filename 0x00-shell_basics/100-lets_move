@@ -1,6 +1,2 @@
 #!/bin/bash
-mkdir -p /tmp/u
-for file in [A-Z]*
-do
-    mv "$file" /tmp/u/
-done
+mv [A-Z]* /tmp/u 2>/dev/null
