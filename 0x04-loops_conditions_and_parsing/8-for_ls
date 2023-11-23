@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# this script will print files in current folder where only the part of the name after the first dash is displayed.
+
+cd_files=$(ls)
+
+for file in $cd_files
+do
+	echo "$file" | cut -f 2- -d "-"
+done
