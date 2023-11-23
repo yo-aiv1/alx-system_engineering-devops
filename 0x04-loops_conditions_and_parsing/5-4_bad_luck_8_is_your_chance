@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# this script will print Best school 10 times but in line 4th will print bad luck instead and in 8th good luck instead.
+count="0"
+while [ $count -ne "10" ]
+do
+	if [ "$count" = "3" ]
+	then
+		echo "bad luck"
+	elif [ "$count" = "7" ]
+	then
+		echo "good luck"
+	else
+		echo "Best School"
+	fi
+	((count++))
+done
