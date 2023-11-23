@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# This scirpt will print the content of the file /etc/passwd but only the username and user id and home directory path for the user.
+
+max=$(wc -l /etc/passwd | cut -f 1 -d " ")
+count="1"
+while [ $count -ne $((max + 1)) ]
+do
+	username=$(head -n $count /etc/passwd | tail -n 1 | cut -f 1 -d ":")
+	user_id=$(head -n $count /etc/passwd | tail -n 1 | cut -f 3 -d ":")
+	path=$(head -n $count /etc/passwd | tail -n 1 | cut -f 6 -d ":")
+	echo "$username":"$user_id":"$path"
+	((count++))
+done
