@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
 # This script will print Best School 10 times but in the 9th will print Best school and then hi
-hi_index="9"
 count="0"
 while [ $count -ne 10 ]
 do
 	echo "Best School"
 	((count++))
-	if [ $count = 9 ]
+	if [ "$count" = 9 ]
 	then
 		echo "Hi"
 	fi
