@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# this script will kill ./7-highlander
+pgrep -f 7-highlander | xargs kill -9
