@@ -16,10 +16,10 @@ then
 	
 	if [ -f $file ]
 	then
-		echo "$file file is a regular file"
+		echo "$file is a regular file"
 	fi
 
 else
-	echo "$file does not exists"
+	echo "$file file does not exists"
 fi
 
