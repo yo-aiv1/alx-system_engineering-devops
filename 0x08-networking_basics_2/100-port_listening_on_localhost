@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# this script will listen on port 98 and will print a message sent by someone who got connected to it.
+nc -l -p 98
