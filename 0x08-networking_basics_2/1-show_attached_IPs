@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# this script will show all IPv4 on current machine.
+ifconfig | awk '/inet / {print $2}'
