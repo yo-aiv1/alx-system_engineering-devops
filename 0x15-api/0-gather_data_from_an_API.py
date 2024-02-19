@@ -12,7 +12,7 @@ if __name__ == "__main__":
 
     UserRes = requests.get(users)
     UserName = UserRes.json().get("name")
-    print("Employee {} is done with".format(UserName), end="")
+    print("Employee {} is done with tasks".format(UserName), end="")
 
     UserTasks = requests.get(todos)
     TasksObj = UserTasks.json()
@@ -22,6 +22,6 @@ if __name__ == "__main__":
         if task.get('completed') is True:
             CompletedTasks.append(task.get("title"))
 
-    print(" ({}/{}):".format(len(CompletedTasks), len(TasksObj)))
+    print("({}/{}):".format(len(CompletedTasks), len(TasksObj)))
     for task in CompletedTasks:
         print("\t {}".format(task))
