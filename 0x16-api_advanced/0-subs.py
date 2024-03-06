@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Fetch Data from reddit API"""
 import requests
 
