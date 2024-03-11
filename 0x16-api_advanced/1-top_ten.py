@@ -11,26 +11,17 @@ def top_ten(subreddit):
 
     u_agent = 'Mozilla/5.0'
 
-    headers = {
+    myheader = {
         'User-Agent': u_agent
     }
 
-    params = {
-        'limit': 10
-    }
+    headers = requests.utils.default_headers()
+    headers.update(myheader)
 
-    url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
-    res = requests.get(url,
-                       headers=headers,
-                       params=params,
-                       allow_redirects=False)
-    if res.status_code != 200:
+    url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
+    r = requests.get(url, headers=headers).json()
+    top_ten = r.get('data', {}).get('children', [])
+    if not top_ten:
         print(None)
-        return
-    dic = res.json()
-    hot_posts = dic['data']['children']
-    if len(hot_posts) is 0:
-        print(None)
-    else:
-        for post in hot_posts:
-            print(str(post['data']['title']))
+    for t in top_ten:
+        print(t.get('data').get('title'))
